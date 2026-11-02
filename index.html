@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Presentación interactiva del caso Servimedic con Arena, mantenimiento preventivo y OptQuest.">
+  <meta name="theme-color" content="#ff4a1c">
+  <title>Arena + OptQuest | Caso Servimedic</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <header class="deck-ui" aria-label="Controles de la presentación">
+    <button class="icon-button" id="overviewButton" type="button" aria-label="Abrir índice" title="Índice (O)">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="deck-ui__title">SERVIMEDIC · SIMULACIÓN Y OPTIMIZACIÓN</div>
+    <div class="deck-ui__counter"><strong id="currentSlide">01</strong><span>/</span><span id="totalSlides">21</span></div>
+  </header>
+
+  <main id="deck" class="deck" aria-live="polite">
+    <section class="slide slide--cover is-active" data-title="Simulación y optimización" aria-label="Lámina 1">
+      <div class="cover-grid">
+        <div class="cover-copy">
+          <p class="eyebrow">CÍRCULO DE SIMULACIÓN</p>
+          <h1>Simulación y optimización de recursos en servicios de salud</h1>
+          <p class="lead">Caso Servimedic con Arena, mantenimiento preventivo y OptQuest</p>
+          <div class="cover-meta">
+            <span>Diego Alonso Chiang Meléndez</span>
+            <span>Raúl Fernando Ochoa Jara</span>
+          </div>
+          <div class="tool-tags" aria-label="Herramientas utilizadas">
+            <span>Arena Simulation</span><span>OptQuest</span><span>Output Analyzer</span>
+          </div>
+        </div>
+        <div class="cover-visual" aria-hidden="true">
+          <div class="orbit orbit--one"></div>
+          <div class="orbit orbit--two"></div>
+          <div class="core-mark">
+            <span>SIM</span>
+            <b>+</b>
+            <span>OPT</span>
+          </div>
+          <div class="cover-logo"><img src="assets/servimedic-logo.png" alt=""></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="El reto operativo" aria-label="Lámina 2">
+      <div class="slide-header"><span class="section-kicker">01 · EL CASO</span><h2>El reto operativo</h2></div>
+      <div class="challenge-layout">
+        <div class="challenge-copy">
+          <p class="big-question">¿Cómo atender a más clientes sin trasladar el riesgo de una mala decisión al sistema real?</p>
+          <p>El escenario base combina colas prolongadas, capacidad desbalanceada y fallas recurrentes en equipos críticos.</p>
+        </div>
+        <div class="baseline-metrics">
+          <article class="metric metric--cyan">
+            <span class="metric__label">Ratio atendido</span>
+            <strong data-count="0.73" data-decimals="2">0.00</strong>
+            <small>IC 95%: 0.553–0.907</small>
+          </article>
+          <article class="metric metric--sand">
+            <span class="metric__label">Tiempo en colas</span>
+            <strong><span data-count="1.45" data-decimals="2">0.00</span> h</strong>
+            <small>Promedio del escenario AS-IS</small>
+          </article>
+          <article class="metric metric--violet">
+            <span class="metric__label">Fallas comunes</span>
+            <strong data-count="4.9" data-decimals="1">0.0</strong>
+            <small>Audition y Vision Tester</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Herramientas aplicadas" aria-label="Lámina 3">
+      <div class="slide-header"><span class="section-kicker">02 · ENFOQUE</span><h2>Herramientas aplicadas al caso</h2></div>
+      <div class="toolchain" aria-label="Secuencia de herramientas">
+        <article><span class="toolchain__number">01</span><h3>Arena</h3><p>Representa llegadas, atención, recursos, decisiones y colas.</p></article>
+        <article><span class="toolchain__number">02</span><h3>MTBF y MTTR</h3><p>Transforman el historial de fallas y reparaciones en comportamiento simulado.</p></article>
+        <article><span class="toolchain__number">03</span><h3>Mantenimiento</h3><p>Introduce intervenciones preventivas y continuidad operativa.</p></article>
+        <article class="toolchain__focus"><span class="toolchain__number">04</span><h3>OptQuest</h3><p>Busca una configuración de recursos que cumpla objetivos y restricciones.</p></article>
+        <article><span class="toolchain__number">05</span><h3>Output Analyzer</h3><p>Compara escenarios mediante promedios e intervalos de confianza.</p></article>
+      </div>
+    </section>
+
+    <section class="slide" data-title="El proceso de evaluación médica" aria-label="Lámina 4">
+      <div class="slide-header"><span class="section-kicker">03 · MODELO AS-IS</span><h2>El proceso de evaluación médica</h2></div>
+      <div class="process-track" aria-label="Etapas principales del proceso">
+        <article><span>01</span><h3>Ingreso</h3><p>Llegada y ventanilla</p></article>
+        <article><span>02</span><h3>Registro</h3><p>Medicina general</p></article>
+        <article><span>03</span><h3>Evaluaciones</h3><p>Sangre y psicología</p></article>
+        <article class="process-track__critical"><span>04</span><h3>Exámenes técnicos</h3><p>Audition y Vision Tester</p></article>
+        <article><span>05</span><h3>Cierre</h3><p>Chequeo y salida</p></article>
+      </div>
+      <div class="diagnostic-strip">
+        <div><strong>Demanda variable</strong><span>Las llegadas cambian durante la jornada</span></div>
+        <div><strong>Recursos compartidos</strong><span>La capacidad no siempre acompaña la demanda</span></div>
+        <div><strong>Equipos críticos</strong><span>Una falla interrumpe parte del circuito</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Modelo principal AS-IS" aria-label="Lámina 5">
+      <div class="slide-header"><span class="section-kicker">04 · ARENA</span><h2>Modelo principal AS-IS</h2></div>
+      <figure class="evidence evidence--hero zoomable" data-zoom="assets/arena-asis-principal.png" data-caption="Modelo principal AS-IS en Arena">
+        <img src="assets/arena-asis-principal.png" alt="Modelo principal AS-IS desarrollado en Arena">
+        <figcaption>El flujo conecta llegadas, ventanillas, evaluaciones médicas, decisiones de equipo y salida del cliente.</figcaption>
+      </figure>
+      <div class="micro-points">
+        <span>Entidades: clientes</span><span>Recursos: personal y equipos</span><span>Salidas: atención, colas y clientes en proceso</span>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Procesos secundarios AS-IS" aria-label="Lámina 6">
+      <div class="slide-header"><span class="section-kicker">05 · FALLAS</span><h2>Procesos secundarios del AS-IS</h2></div>
+      <div class="evidence-pair">
+        <figure class="evidence zoomable" data-zoom="assets/arena-asis-audition.png" data-caption="Mantenimiento correctivo del Audition Tester">
+          <div class="figure-label figure-label--brown">Audition Tester</div>
+          <img src="assets/arena-asis-audition.png" alt="Proceso de mantenimiento correctivo del Audition Tester en Arena">
+          <figcaption>La falla desactiva el recurso, ejecuta la corrección y registra el evento.</figcaption>
+        </figure>
+        <figure class="evidence zoomable" data-zoom="assets/arena-asis-vision.png" data-caption="Mantenimiento correctivo del Vision Tester">
+          <div class="figure-label figure-label--purple">Vision Tester</div>
+          <img src="assets/arena-asis-vision.png" alt="Proceso de mantenimiento correctivo del Vision Tester en Arena">
+          <figcaption>La lógica permite medir el efecto de fallas y correctivos sobre la operación.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Datos para simular" aria-label="Lámina 7">
+      <div class="slide-header"><span class="section-kicker">06 · ENTRADAS</span><h2>Qué datos necesita la simulación</h2></div>
+      <div class="data-layout">
+        <div class="data-source">
+          <span class="data-source__icon">λ</span>
+          <div><h3>Demanda</h3><p>Patrón de llegadas por jornada y variabilidad entre clientes.</p></div>
+        </div>
+        <div class="data-source">
+          <span class="data-source__icon">t</span>
+          <div><h3>Tiempos de servicio</h3><p>Duración de cada estación y distribución observada.</p></div>
+        </div>
+        <div class="data-source">
+          <span class="data-source__icon">R</span>
+          <div><h3>Recursos</h3><p>Turnos, disponibilidad, capacidad y reglas de asignación.</p></div>
+        </div>
+        <div class="data-source data-source--accent">
+          <span class="data-source__icon">μ</span>
+          <div><h3>Confiabilidad</h3><p>MTBF para el intervalo entre fallas y MTTR para el tiempo de reparación.</p></div>
+        </div>
+      </div>
+      <div class="formula-band"><span>Datos reales</span><b>+</b><span>distribuciones</span><b>+</b><span>reglas operativas</span><b>=</b><strong>modelo ejecutable</strong></div>
+    </section>
+
+    <section class="slide" data-title="Diagnóstico del escenario base" aria-label="Lámina 8">
+      <div class="slide-header"><span class="section-kicker">07 · DIAGNÓSTICO</span><h2>Qué reveló el escenario base</h2></div>
+      <div class="cause-map">
+        <article><span class="cause-map__share">84.8%</span><h3>Programación de recursos</h3><p>La asignación del personal no acompaña la demanda y genera capacidad ociosa en unas etapas y colas en otras.</p><strong>Herramienta: OptQuest</strong></article>
+        <article><span class="cause-map__share">15.2%</span><h3>Fallas en equipos médicos</h3><p>Los correctivos del Audition Tester y Vision Tester reducen disponibilidad durante la jornada.</p><strong>Herramienta: mantenimiento preventivo</strong></article>
+      </div>
+      <div class="impact-band"><span>3.2 clientes no atendidos por día</span><span>S/ 480 de pérdida diaria estimada</span><span>Brecha de 20 min frente al tiempo de referencia</span></div>
+    </section>
+
+    <section class="slide" data-title="Diseño del escenario TO-BE" aria-label="Lámina 9">
+      <div class="slide-header"><span class="section-kicker">08 · INTERVENCIÓN</span><h2>Diseño del escenario TO-BE</h2></div>
+      <div class="before-after">
+        <article class="before-after__side">
+          <span class="state-label">AS-IS</span>
+          <h3>Respuesta correctiva</h3>
+          <ul><li>El equipo falla durante la operación</li><li>El recurso se desactiva sin programación</li><li>La cola absorbe la interrupción</li></ul>
+        </article>
+        <div class="before-after__bridge" aria-hidden="true"><span></span><b>TO-BE</b><span></span></div>
+        <article class="before-after__side before-after__side--target">
+          <span class="state-label">TO-BE</span>
+          <h3>Intervención preventiva</h3>
+          <ul><li>La lógica revisa la antigüedad del mantenimiento</li><li>El recurso se desactiva temporalmente</li><li>El equipo vuelve al flujo operativo</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Procesos secundarios TO-BE" aria-label="Lámina 10">
+      <div class="slide-header"><span class="section-kicker">09 · MANTENIMIENTO</span><h2>Procesos secundarios del TO-BE</h2></div>
+      <div class="tabs tobe-tabs" data-tabs>
+        <div class="tab-list" role="tablist" aria-label="Seleccionar proceso secundario TO-BE">
+          <button class="tab is-selected" type="button" role="tab" aria-selected="true" data-tab="tobe-at">Audition Tester</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-tab="tobe-vt">Vision Tester</button>
+        </div>
+
+        <div class="tab-panel tobe-comparison is-selected" role="tabpanel" data-panel="tobe-at">
+          <figure class="tobe-visual zoomable" data-zoom="assets/arena-tobe-audition.png" data-caption="Proceso TO-BE del Audition Tester en Arena">
+            <div class="tobe-visual__label"><span>AT</span> Modelo en Arena</div>
+            <img src="assets/arena-tobe-audition.png" alt="Proceso TO-BE de mantenimiento preventivo del Audition Tester modelado en Arena">
+          </figure>
+          <article class="tobe-flow" aria-label="Flujo resumido del Audition Tester">
+            <div class="flowchart">
+              <h3 class="flowchart__title">Flujo resumido</h3>
+              <span class="flowchart__underline" aria-hidden="true"></span>
+              <span class="flowchart__tester">Audition Tester</span>
+              <svg class="flowchart__links" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true">
+                <defs><marker id="flow-arrow-at" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z"></path></marker></defs>
+                <path class="flow-link" marker-end="url(#flow-arrow-at)" d="M165 154 H220"></path>
+                <path class="flow-link" marker-end="url(#flow-arrow-at)" d="M510 154 H610"></path>
+                <path class="flow-link" marker-end="url(#flow-arrow-at)" d="M365 220 V290"></path>
+                <path class="flow-link flow-link--merge" d="M473 336 H540 V154"></path>
+                <path class="flow-link" marker-end="url(#flow-arrow-at)" d="M700 198 V265"></path>
+                <path class="flow-link" marker-end="url(#flow-arrow-at)" d="M700 368 V395"></path>
+                <path class="flow-link" marker-end="url(#flow-arrow-at)" d="M790 440 H830"></path>
+              </svg>
+              <span class="flowchart__branch-label flowchart__branch-label--yes">Sí</span>
+              <span class="flowchart__branch-label flowchart__branch-label--no">No</span>
+              <div class="flow-node flow-node--start flow-node--p1"><b>1</b><span>Inicio / revisar<br>programación</span></div>
+              <div class="flow-node flow-node--decision flow-node--p2"><b>2</b><span>Validar AT activo:<br>¿nunca tuvo correctivo o<br>último mantenimiento<br>≥ 100 min?</span></div>
+              <div class="flow-node flow-node--wait flow-node--p3"><b>3</b><span>Esperar<br>100 minutos</span></div>
+              <div class="flow-node flow-node--action flow-node--p4"><b>4</b><span>Desactivar<br>AT</span></div>
+              <div class="flow-node flow-node--process flow-node--p5"><b>5</b><span>Mantenimiento<br>preventivo</span></div>
+              <div class="flow-node flow-node--action flow-node--p6"><b>6</b><span>Activar<br>AT</span></div>
+              <div class="flow-node flow-node--end flow-node--p7"><b>7</b><span>Cerrar<br>proceso</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="tab-panel tobe-comparison" role="tabpanel" data-panel="tobe-vt" hidden>
+          <figure class="tobe-visual zoomable" data-zoom="assets/arena-tobe-vision.png" data-caption="Proceso TO-BE del Vision Tester en Arena">
+            <div class="tobe-visual__label"><span>VT</span> Modelo en Arena</div>
+            <img src="assets/arena-tobe-vision.png" alt="Proceso TO-BE de mantenimiento preventivo del Vision Tester modelado en Arena">
+          </figure>
+          <article class="tobe-flow" aria-label="Flujo resumido del Vision Tester">
+            <div class="flowchart">
+              <h3 class="flowchart__title">Flujo resumido</h3>
+              <span class="flowchart__underline" aria-hidden="true"></span>
+              <span class="flowchart__tester">Vision Tester</span>
+              <svg class="flowchart__links" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true">
+                <defs><marker id="flow-arrow-vt" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z"></path></marker></defs>
+                <path class="flow-link" marker-end="url(#flow-arrow-vt)" d="M165 154 H220"></path>
+                <path class="flow-link" marker-end="url(#flow-arrow-vt)" d="M510 154 H610"></path>
+                <path class="flow-link" marker-end="url(#flow-arrow-vt)" d="M365 220 V290"></path>
+                <path class="flow-link flow-link--merge" d="M473 336 H540 V154"></path>
+                <path class="flow-link" marker-end="url(#flow-arrow-vt)" d="M700 198 V265"></path>
+                <path class="flow-link" marker-end="url(#flow-arrow-vt)" d="M700 368 V395"></path>
+                <path class="flow-link" marker-end="url(#flow-arrow-vt)" d="M790 440 H830"></path>
+              </svg>
+              <span class="flowchart__branch-label flowchart__branch-label--yes">Sí</span>
+              <span class="flowchart__branch-label flowchart__branch-label--no">No</span>
+              <div class="flow-node flow-node--start flow-node--p1"><b>1</b><span>Inicio / revisar<br>programación</span></div>
+              <div class="flow-node flow-node--decision flow-node--p2"><b>2</b><span>Validar VT activo:<br>¿nunca tuvo correctivo o<br>último mantenimiento<br>≥ 100 min?</span></div>
+              <div class="flow-node flow-node--wait flow-node--p3"><b>3</b><span>Esperar<br>100 minutos</span></div>
+              <div class="flow-node flow-node--action flow-node--p4"><b>4</b><span>Desactivar<br>VT</span></div>
+              <div class="flow-node flow-node--process flow-node--p5"><b>5</b><span>Mantenimiento<br>preventivo</span></div>
+              <div class="flow-node flow-node--action flow-node--p6"><b>6</b><span>Activar<br>VT</span></div>
+              <div class="flow-node flow-node--end flow-node--p7"><b>7</b><span>Cerrar<br>proceso</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Por qué OptQuest" aria-label="Lámina 11">
+      <div class="slide-header"><span class="section-kicker">10 · OPTQUEST</span><h2>Por qué entra OptQuest</h2></div>
+      <div class="optquest-intro">
+        <div class="optquest-wordmark"><span>OPT</span>QUEST<small>simulation optimization</small></div>
+        <div class="scenario-cloud" aria-hidden="true">
+          <i style="--x:10%;--y:20%"></i><i style="--x:34%;--y:8%"></i><i style="--x:62%;--y:18%"></i><i style="--x:86%;--y:10%"></i>
+          <i style="--x:20%;--y:52%"></i><i style="--x:48%;--y:43%"></i><i class="is-best" style="--x:74%;--y:49%"></i>
+          <i style="--x:8%;--y:80%"></i><i style="--x:39%;--y:78%"></i><i style="--x:90%;--y:76%"></i>
+        </div>
+        <div class="optquest-copy">
+          <h3>Una búsqueda guiada sobre un modelo con incertidumbre</h3>
+          <p>Cada combinación de personal y equipos debe ejecutarse en Arena. OptQuest utiliza los resultados anteriores para priorizar nuevas zonas de búsqueda.</p>
+          <div class="decision-line"><span>Combinaciones factibles</span><b>→</b><span>KPIs simulados</span><b>→</b><strong>Mejor configuración encontrada</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Ciclo Arena–OptQuest" aria-label="Lámina 12">
+      <div class="slide-header"><span class="section-kicker">11 · BÚSQUEDA</span><h2>Ciclo Arena–OptQuest</h2></div>
+      <div class="optimization-loop" id="optimizationLoop">
+        <article class="loop-step is-current"><span>1</span><h3>Variables</h3><p>Personal, equipos y límites discretos</p></article>
+        <article class="loop-step"><span>2</span><h3>Escenario</h3><p>OptQuest propone una combinación factible</p></article>
+        <article class="loop-step"><span>3</span><h3>Arena simula</h3><p>El modelo estima atención, colas y fallas</p></article>
+        <article class="loop-step"><span>4</span><h3>KPIs</h3><p>Los resultados se comparan con los objetivos</p></article>
+        <article class="loop-step"><span>5</span><h3>Siguiente prueba</h3><p>El motor decide dónde buscar después</p></article>
+        <div class="loop-core"><strong>OptQuest</strong><span>aprende de cada corrida</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Cómo busca OptQuest" aria-label="Lámina 13">
+      <div class="slide-header"><span class="section-kicker">12 · METAHEURÍSTICA</span><h2>Cómo busca OptQuest</h2></div>
+      <div class="search-principles">
+        <article><span>SS</span><h3>Scatter Search</h3><p>Combina soluciones buenas y diferentes para generar alternativas prometedoras.</p></article>
+        <article><span>TS</span><h3>Tabu Search</h3><p>Usa memoria para evitar ciclos y escapar de óptimos locales.</p></article>
+        <article><span>PL</span><h3>Factibilidad</h3><p>Respeta límites, costos y restricciones antes de ejecutar la simulación.</p></article>
+        <article><span>NN</span><h3>Modelos aproximados</h3><p>Aprende de las corridas y prioriza zonas donde los KPIs pueden mejorar.</p></article>
+      </div>
+      <div class="search-note"><strong>En el caso Servimedic:</strong> explora recursos, Arena evalúa el desempeño y OptQuest selecciona la siguiente combinación.</div>
+    </section>
+
+    <section class="slide" data-title="Configuración de OptQuest" aria-label="Lámina 14">
+      <div class="slide-header"><span class="section-kicker">13 · CONFIGURACIÓN</span><h2>Las pantallas reales de OptQuest</h2></div>
+      <div class="config-grid">
+        <figure class="evidence zoomable" data-zoom="assets/optquest-variables.png" data-caption="Variables de decisión configuradas en OptQuest">
+          <div class="figure-label figure-label--blue">Variables de decisión</div>
+          <img src="assets/optquest-variables.png" alt="Pantalla de variables de decisión de OptQuest">
+          <figcaption>Límites inferiores, valores sugeridos, límites superiores y pasos discretos.</figcaption>
+        </figure>
+        <figure class="evidence zoomable" data-zoom="assets/optquest-objectives.png" data-caption="Funciones objetivo configuradas en OptQuest">
+          <div class="figure-label figure-label--green">Funciones objetivo</div>
+          <img src="assets/optquest-objectives.png" alt="Pantalla de funciones objetivo de OptQuest">
+          <figcaption>Maximizar atención y minimizar colas y mantenimientos correctivos.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Variables, objetivos y restricciones" aria-label="Lámina 15">
+      <div class="slide-header"><span class="section-kicker">14 · FORMULACIÓN</span><h2>Variables, objetivos y restricciones</h2></div>
+      <div class="formulation">
+        <article class="formulation__variables"><span class="accent-line accent-line--blue"></span><h3>Variables discretas</h3><ul><li>Recepcionistas</li><li>Técnicos médicos</li><li>Especialista de mantenimiento</li><li>Audition Tester</li><li>Vision Tester</li></ul></article>
+        <article class="formulation__objectives"><span class="accent-line accent-line--green"></span><h3>Objetivos</h3><div class="objective"><b>MAX</b><span>Ratio de clientes atendidos</span></div><div class="objective"><b>MIN</b><span>Tiempo promedio en colas</span></div><div class="objective"><b>MIN</b><span>Mantenimientos correctivos</span></div></article>
+        <article class="formulation__constraints"><span class="accent-line accent-line--yellow"></span><h3>Umbrales operativos</h3><div class="threshold"><strong>&gt;85%</strong><span>clientes atendidos</span></div><div class="threshold"><strong>&lt;45 min</strong><span>demora en cola</span></div><div class="threshold"><strong>&lt;3</strong><span>fallas por tester</span></div></article>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Configuración y costos TO-BE" aria-label="Lámina 16">
+      <div class="slide-header"><span class="section-kicker">15 · DECISIÓN</span><h2>Configuración y costos del escenario TO-BE</h2></div>
+      <div class="resource-table" role="table" aria-label="Comparación de recursos">
+        <div class="resource-table__row resource-table__head" role="row"><span>Recurso</span><span>Escenario base</span><span>TO-BE</span></div>
+        <div class="resource-table__row" role="row"><strong>Recepción</strong><span>1 TC + 3 MT</span><span class="target-value">2 TC</span></div>
+        <div class="resource-table__row" role="row"><strong>Técnico médico</strong><span>1 TC + 5 MT</span><span class="target-value">2 TC</span></div>
+        <div class="resource-table__row" role="row"><strong>Mantenimiento</strong><span>0 especialistas</span><span class="target-value">1 especialista</span></div>
+        <div class="resource-table__row" role="row"><strong>Equipos</strong><span>1 AT + 1 VT</span><span class="target-value">2 AT + 2 VT</span></div>
+      </div>
+      <div class="price-summary">
+        <article class="price-card price-card--operation">
+          <div class="price-card__header"><span>OPERACIÓN MENSUAL</span><strong>− S/ 600 / mes</strong></div>
+          <div class="monthly-comparison">
+            <div><span>Escenario base</span><strong>S/ 31,150</strong></div>
+            <div><span>Escenario TO-BE</span><strong>S/ 30,550</strong></div>
+          </div>
+          <p>Ahorro anual estimado: <strong>S/ 7,200</strong></p>
+        </article>
+        <article class="price-card price-card--investment">
+          <div class="price-card__header"><span>INVERSIÓN ÚNICA DE IMPLEMENTACIÓN</span><strong>S/ 52,432</strong></div>
+          <div class="investment-breakdown">
+            <div><span>1 Vision Tester</span><strong>S/ 15,000</strong></div>
+            <div><span>1 Audition Tester</span><strong>S/ 10,000</strong></div>
+            <div><span>Personal, capacitación, practicantes y software</span><strong>S/ 27,432</strong></div>
+          </div>
+          <p>Los equipos suman <strong>S/ 25,000</strong> y forman parte del presupuesto total.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Retorno financiero directo" aria-label="Lámina 17">
+      <div class="slide-header"><span class="section-kicker">16 · FINANZAS</span><h2>Retorno financiero: escenario directo</h2></div>
+      <div class="finance-layout">
+        <article class="finance-assumption">
+          <span class="scenario-pill">NO CONSERVADOR</span>
+          <h3>Ingreso adicional completo</h3>
+          <p>El escenario reconoce los S/ 149,760 anuales generados por tres clientes adicionales al día.</p>
+          <div class="annual-flow"><span>Flujo anual</span><strong>S/ 156,960</strong><small>Ingresos adicionales + ahorro operativo anual de S/ 7,200</small></div>
+        </article>
+        <div class="finance-kpis">
+          <article><span>VAN · 10%</span><strong>S/ 542,570</strong></article>
+          <article><span>TIR</span><strong>299.1%</strong></article>
+          <article><span>Recupero</span><strong>4.0 meses</strong></article>
+          <article><span>B/C descontado</span><strong>11.35</strong></article>
+        </div>
+      </div>
+      <div class="cashflow-timeline" aria-label="Flujo acumulado del escenario directo">
+        <div class="cashflow-year cashflow-year--initial"><span>Año 0</span><strong>−S/ 52,432</strong><small>Inversión</small></div>
+        <div class="cashflow-year"><span>Año 1</span><strong>S/ 104,528</strong><small>Acumulado</small></div>
+        <div class="cashflow-year"><span>Año 2</span><strong>S/ 261,488</strong><small>Acumulado</small></div>
+        <div class="cashflow-year"><span>Año 3</span><strong>S/ 418,448</strong><small>Acumulado</small></div>
+        <div class="cashflow-year"><span>Año 4</span><strong>S/ 575,408</strong><small>Acumulado</small></div>
+        <div class="cashflow-year"><span>Año 5</span><strong>S/ 732,368</strong><small>Acumulado</small></div>
+      </div>
+      <p class="finance-note">Horizonte de 5 años, tasa de descuento del 10% y sin crecimiento ni inflación.</p>
+    </section>
+
+    <section class="slide" data-title="Retorno financiero conservador" aria-label="Lámina 18">
+      <div class="slide-header"><span class="section-kicker">17 · FINANZAS</span><h2>Retorno financiero: escenario conservador</h2></div>
+      <div class="finance-layout finance-layout--conservative">
+        <article class="finance-assumption">
+          <span class="scenario-pill">CONSERVADOR</span>
+          <h3>Margen del 40% sobre los nuevos ingresos</h3>
+          <p>El escenario reconoce un costo de ventas del 60% y conserva S/ 59,904 anuales como margen incremental.</p>
+          <div class="annual-flow"><span>Flujo anual</span><strong>S/ 67,104</strong><small>Margen por ingresos + ahorro operativo anual de S/ 7,200</small></div>
+        </article>
+        <div class="finance-kpis">
+          <article><span>VAN · 10%</span><strong>S/ 201,945</strong></article>
+          <article><span>TIR</span><strong>125.8%</strong></article>
+          <article><span>Recupero</span><strong>9.4 meses</strong></article>
+          <article><span>B/C descontado</span><strong>4.85</strong></article>
+        </div>
+      </div>
+      <div class="cashflow-timeline cashflow-timeline--conservative" aria-label="Flujo acumulado del escenario conservador">
+        <div class="cashflow-year cashflow-year--initial"><span>Año 0</span><strong>−S/ 52,432</strong><small>Inversión</small></div>
+        <div class="cashflow-year"><span>Año 1</span><strong>S/ 14,672</strong><small>Acumulado</small></div>
+        <div class="cashflow-year"><span>Año 2</span><strong>S/ 81,776</strong><small>Acumulado</small></div>
+        <div class="cashflow-year"><span>Año 3</span><strong>S/ 148,880</strong><small>Acumulado</small></div>
+        <div class="cashflow-year"><span>Año 4</span><strong>S/ 215,984</strong><small>Acumulado</small></div>
+        <div class="cashflow-year"><span>Año 5</span><strong>S/ 283,088</strong><small>Acumulado</small></div>
+      </div>
+      <p class="finance-note">Incluso con el costo de ventas, la inversión se recupera dentro del primer año.</p>
+    </section>
+
+    <section class="slide" data-title="Resultados operacionales" aria-label="Lámina 19">
+      <div class="slide-header"><span class="section-kicker">18 · RESULTADOS</span><h2>Resultados operacionales</h2></div>
+      <div class="results-grid">
+        <article class="result-card result-card--cyan">
+          <span class="result-card__label">Ratio atendido</span>
+          <div class="result-card__comparison"><span>0.73</span><b>0.953</b></div>
+          <strong><span data-count="30.5" data-decimals="1">0.0</span>%</strong>
+          <small>de mejora</small>
+        </article>
+        <article class="result-card result-card--sand">
+          <span class="result-card__label">Tiempo en colas</span>
+          <div class="result-card__comparison"><span>1.45 h</span><b>0.859 h</b></div>
+          <strong>−<span data-count="40.7" data-decimals="1">0.0</span>%</strong>
+          <small>de reducción</small>
+        </article>
+        <article class="result-card result-card--violet">
+          <span class="result-card__label">Fallas comunes</span>
+          <div class="result-card__comparison"><span>4.9</span><b>2.2</b></div>
+          <strong>−<span data-count="55.1" data-decimals="1">0.0</span>%</strong>
+          <small>de reducción</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Evidencia estadística" aria-label="Lámina 20">
+      <div class="slide-header"><span class="section-kicker">19 · OUTPUT ANALYZER</span><h2>Evidencia estadística de los resultados</h2></div>
+      <div class="tabs results-tabs" data-tabs>
+        <div class="tab-list" role="tablist" aria-label="Indicador analizado">
+          <button class="tab is-selected" role="tab" aria-selected="true" data-tab="ratio">Ratio atendido</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="queue">Tiempo en cola</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="failures">Fallas</button>
+        </div>
+        <div class="tab-panel is-selected" data-panel="ratio">
+          <figure class="evidence evidence--analyzer zoomable" data-zoom="assets/output-analyzer-1.png" data-caption="Output Analyzer: ratio de clientes atendidos">
+            <img src="assets/output-analyzer-1.png" alt="Intervalos de confianza del ratio de clientes atendidos">
+          </figure>
+          <p>El promedio aumenta de 0.73 a 0.953. Los intervalos permiten valorar la variabilidad entre réplicas.</p>
+        </div>
+        <div class="tab-panel" data-panel="queue" hidden>
+          <figure class="evidence evidence--analyzer zoomable" data-zoom="assets/output-analyzer-2.png" data-caption="Output Analyzer: tiempo promedio en cola">
+            <img src="assets/output-analyzer-2.png" alt="Intervalos de confianza del tiempo promedio en cola">
+          </figure>
+          <p>El tiempo promedio disminuye de 1.45 h a 0.859 h en el escenario mejorado.</p>
+        </div>
+        <div class="tab-panel" data-panel="failures" hidden>
+          <figure class="evidence evidence--analyzer zoomable" data-zoom="assets/output-analyzer-3.png" data-caption="Output Analyzer: número de fallas comunes">
+            <img src="assets/output-analyzer-3.png" alt="Intervalos de confianza del número de fallas comunes">
+          </figure>
+          <p>Las fallas comunes disminuyen de 4.9 a 2.2 al incorporar la política preventiva.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--closing" data-title="Aplicaciones del enfoque" aria-label="Lámina 21">
+      <div class="slide-header"><span class="section-kicker">20 · TRANSFERENCIA</span><h2>Dónde puede aplicarse este enfoque</h2></div>
+      <div class="application-grid">
+        <article><span>CL</span><h3>Clínicas</h3><p>Pacientes, consultorios y equipos compartidos.</p></article>
+        <article><span>BA</span><h3>Bancos</h3><p>Ventanillas, turnos y demanda por franja horaria.</p></article>
+        <article><span>AL</span><h3>Almacenes</h3><p>Pedidos, estaciones y capacidad de preparación.</p></article>
+        <article><span>IN</span><h3>Industria</h3><p>Máquinas, fallas, mantenimiento y producción.</p></article>
+      </div>
+      <div class="playbook"><span>Modelar</span><b>→</b><span>Validar</span><b>→</b><span>Optimizar</span><b>→</b><span>Comparar</span></div>
+      <div class="closing-message">
+        <strong>OptQuest convierte un modelo de simulación en una herramienta de decisión.</strong>
+        <p>Permite explorar cambios antes de comprometer recursos, interrumpir la operación o asumir riesgos innecesarios.</p>
+      </div>
+    </section>
+  </main>
+
+  <nav class="deck-nav" aria-label="Navegación entre láminas">
+    <button id="prevButton" class="nav-button" type="button" aria-label="Lámina anterior">←</button>
+    <button id="nextButton" class="nav-button nav-button--primary" type="button" aria-label="Lámina siguiente">→</button>
+  </nav>
+
+  <button class="help-button" id="helpButton" type="button" aria-label="Mostrar ayuda" title="Ayuda (?)">?</button>
+
+  <dialog id="overviewDialog" class="overview-dialog">
+    <div class="dialog-header"><div><span>ÍNDICE</span><h2>Presentación</h2></div><button class="dialog-close" type="button" data-close="overviewDialog" aria-label="Cerrar">×</button></div>
+    <div id="overviewGrid" class="overview-grid"></div>
+  </dialog>
+
+  <dialog id="helpDialog" class="help-dialog">
+    <div class="dialog-header"><div><span>ATAJOS</span><h2>Control de la presentación</h2></div><button class="dialog-close" type="button" data-close="helpDialog" aria-label="Cerrar">×</button></div>
+    <div class="shortcut-grid"><span><kbd>←</kbd><kbd>→</kbd> navegar</span><span><kbd>Espacio</kbd> avanzar</span><span><kbd>O</kbd> índice</span><span><kbd>F</kbd> pantalla completa</span><span><kbd>Home</kbd> inicio</span><span><kbd>End</kbd> final</span></div>
+  </dialog>
+
+  <dialog id="lightboxDialog" class="lightbox-dialog">
+    <button class="dialog-close lightbox-close" type="button" data-close="lightboxDialog" aria-label="Cerrar">×</button>
+    <img id="lightboxImage" src="" alt="">
+    <p id="lightboxCaption"></p>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
